@@ -1,35 +1,44 @@
-"""Functions used in preparing Guido's gorgeous lasagna.
+EXPECTED_BAKE_TIME = 40
+PREPARATION_TIME = 2
 
-Learn about Guido, the creator of the Python language:
-https://en.wikipedia.org/wiki/Guido_van_Rossum
+def bake_time_remaining(actual_minutes_in_oven):
+    """
+    Calculate the baking time remaining.
 
-This is a module docstring, used to describe the functionality
-of a module and its functions and/or classes.
-"""
+    :param actual_minutes_in_oven: int - The number of minutes the lasagna has been baking in the oven.
+    :return: int - The number of minutes remaining to bake the lasagna.
 
-
-#TODO: define the 'EXPECTED_BAKE_TIME' constant.
-
-
-#TODO: Remove 'pass' and complete the 'bake_time_remaining()' function below.
-def bake_time_remaining():
-    """Calculate the bake time remaining.
-
-    :param elapsed_bake_time: int - baking time already elapsed.
-    :return: int - remaining bake time (in minutes) derived from 'EXPECTED_BAKE_TIME'.
-
-    Function that takes the actual minutes the lasagna has been in the oven as
+    This function takes the actual number of minutes the lasagna has been in the oven as
     an argument and returns how many minutes the lasagna still needs to bake
     based on the `EXPECTED_BAKE_TIME`.
     """
+    return EXPECTED_BAKE_TIME - actual_minutes_in_oven
 
-    pass
+def preparation_time_in_minutes(layers):
+    """
+    Calculate the preparation time in minutes.
 
+    :param layers: int - The number of layers in the lasagna.
+    :return: int - The total preparation time in minutes.
 
-#TODO: Define the 'preparation_time_in_minutes()' function below.
-# You might also consider using 'PREPARATION_TIME' here, if you have it defined.
+    This function takes the number of layers in the lasagna as an argument and returns
+    how many minutes you would spend preparing them. Each layer takes `PREPARATION_TIME` minutes to prepare.
+    """
+    return layers * PREPARATION_TIME
 
+def elapsed_time_in_minutes(layers, actual_minutes_in_oven):
+    """
+    Calculate the total elapsed cooking time.
 
+    :param layers: int - The number of layers in the lasagna.
+    :param actual_minutes_in_oven: int - The number of minutes the lasagna has been baking in the oven.
+    :return: int - The total number of minutes you've been cooking.
 
-#TODO: define the 'elapsed_time_in_minutes()' function below.
-# Remember to add a docstring (you can copy and then alter the one from bake_time_remaining.)
+    This function takes two arguments:
+      - The number of layers in the lasagna
+      - The number of minutes the lasagna has been baking in the oven
+
+    It returns the total number of minutes you've been cooking, which is the sum of
+    your preparation time and the time the lasagna has already spent baking in the oven.
+    """
+    return preparation_time_in_minutes(layers) + actual_minutes_in_oven
