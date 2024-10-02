@@ -1,7 +1,10 @@
 object ArmstrongNumber {
-
     fun check(input: Int): Boolean {
-        return Int.pow(input)
+        val digits = input.toString()
+        val exponent = digits.length
+        val sum = digits.map { 
+            Math.pow(it.toString().toDouble(), exponent.toDouble())
+        }.sum().toInt()
+        return sum == input
     }
-
 }
