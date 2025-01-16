@@ -16,3 +16,7 @@ This repository contains my solutions to Exercism coding challenges.
 For more information on Exercism, visit [exercism.org](https://exercism.org/).
 
 My Exercism profile: [https://exercism.org/profiles/HarrisFauntleroy](https://exercism.org/profiles/HarrisFauntleroy)
+
+---
+
+![Visualization of this repo](./diagram.svg)
